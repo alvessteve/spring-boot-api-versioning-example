@@ -3,7 +3,8 @@ package com.versioning.apiexample.controller;
 import com.versioning.apiexample.model.Task;
 import com.versioning.apiexample.service.TaskService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Collection;
 
@@ -16,7 +17,8 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    @RequestMapping()
+    @ResponseBody
+    @GetMapping(value = "/tasks")
     public Collection<Task> findAllTasks() {
         return taskService.findAll();
     }
