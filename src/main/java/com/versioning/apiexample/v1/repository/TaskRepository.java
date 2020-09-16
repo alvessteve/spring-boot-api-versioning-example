@@ -1,6 +1,6 @@
-package com.versioning.apiexample.repository;
+package com.versioning.apiexample.v1.repository;
 
-import com.versioning.apiexample.model.Task;
+import com.versioning.apiexample.v1.model.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

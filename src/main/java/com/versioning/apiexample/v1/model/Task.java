@@ -1,6 +1,7 @@
-package com.versioning.apiexample.model;
+package com.versioning.apiexample.v1.model;
 
 import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

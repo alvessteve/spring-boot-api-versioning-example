@@ -32,6 +32,10 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
 
+	testImplementation 'io.rest-assured:rest-assured:4.3.1'
+	testImplementation 'io.rest-assured:json-schema-validator:4.3.1'
+	testImplementation 'io.rest-assured:json-path:4.3.1'
+	testImplementation 'io.rest-assured:xml-path:4.3.1'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
@@ -39,4 +43,13 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+configurations.all {
+	resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+		if (details.requested.group == 'org.codehaus.groovy') {
+			details.useVersion "3.0.2"
+			details.because "needed by rest-assured>=4.3"
+		}
+	}
 }

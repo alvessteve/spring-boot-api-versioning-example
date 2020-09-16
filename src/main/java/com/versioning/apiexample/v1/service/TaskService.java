@@ -1,7 +1,7 @@
-package com.versioning.apiexample.service;
+package com.versioning.apiexample.v1.service;
 
-import com.versioning.apiexample.model.Task;
-import com.versioning.apiexample.repository.TaskRepository;
+import com.versioning.apiexample.v1.model.Task;
+import com.versioning.apiexample.v1.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
