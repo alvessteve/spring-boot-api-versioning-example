@@ -2,14 +2,12 @@ package com.versioning.apiexample.v1.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
 @Data
+@Table(name = "tasks")
 public class Task {
 
     @Id
