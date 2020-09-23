@@ -9,10 +9,12 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasSize;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class TaskControllerIntegrationTest {
+class TaskV2ControllerV1IntegrationTest {
 
     @LocalServerPort
     int port;
@@ -24,6 +26,12 @@ class TaskControllerIntegrationTest {
 
     @Test
     void should_return_all_tasks() {
-        given().get("/tasks").then().statusCode(200);
+        given()
+                .accept("application/vnd.myself.api.v1+json")
+                .get("/tasks")
+                .then().statusCode(200)
+                .assertThat()
+                .body("$", hasSize(3))
+                .body("$.tasks[0].title", equalTo("Do laundry"));
     }
 }

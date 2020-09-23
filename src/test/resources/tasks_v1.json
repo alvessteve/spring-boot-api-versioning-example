@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Do laundry",
+    "deadline": "2020-12-31T23:00:01.000+00:00",
+    "done": false
+  },
+  {
+    "id": 2,
+    "title": "Feed the dog",
+    "deadline": "+20019-12-31T23:00:01.000+00:00",
+    "done": true
+  },
+  {
+    "id": 3,
+    "title": "Paint my room",
+    "deadline": "2020-12-31T23:00:01.000+00:00",
+    "done": false
+  }
+]

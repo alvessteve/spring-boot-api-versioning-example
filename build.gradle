@@ -32,6 +32,7 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
 
+	testImplementation 'com.jayway.jsonpath:json-path'
 	testImplementation 'io.rest-assured:rest-assured:4.3.1'
 	testImplementation 'io.rest-assured:json-schema-validator:4.3.1'
 	testImplementation 'io.rest-assured:json-path:4.3.1'
